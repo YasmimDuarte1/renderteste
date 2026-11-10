@@ -3708,3 +3708,75 @@ a {
     width: 16px;
     height: 16px;
 }
+
+/* ==========================================================================
+   RESPONSIVIDADE GERAL
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .content-grid { grid-template-columns: 1fr; }
+  .books-grid { grid-template-columns: repeat(3, 1fr); }
+  .countries-grid { grid-template-columns: repeat(2, 1fr); }
+  .profile-books-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 640px) {
+  /* BARRA LATERAL VIRA MENU INFERIOR FIXO */
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 8px 12px;
+    border-right: none;
+    border-top: 1px solid var(--border-color);
+    z-index: 100;
+  }
+
+  .sidebar-header { display: none; }
+
+  .sidebar-nav {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    gap: 0;
+  }
+
+  .nav-item {
+    flex-direction: column;
+    gap: 4px;
+    padding: 6px 10px;
+    font-size: 10px;
+  }
+
+  .sidebar-footer { margin-top: 0; }
+  .add-book-btn span { display: none; }
+
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+    max-width: 100%;
+    padding: 20px 16px 90px 16px;
+  }
+
+  .page-header { flex-wrap: wrap; gap: 12px; }
+  .search-box { width: 100%; }
+
+  .books-grid { grid-template-columns: repeat(2, 1fr); }
+  .countries-grid { grid-template-columns: 1fr; }
+  .profile-books-grid { grid-template-columns: repeat(2, 1fr); }
+  .profile-stats, .book-stats-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+
+  .book-header-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .book-main-title { font-size: 24px; }
+  .action-buttons-row { flex-direction: column; }
+}
